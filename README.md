@@ -8,13 +8,13 @@ Users can browse popular development technologies, view their details, and add s
 
 ## 🌐 Live Site
 
-(Add your deployed website link here)
+https://b14-a05-devstack-maynudden.netlify.app
 
 ---
 
 ## 📂 GitHub Repository
 
-(Add your GitHub repository link here)
+https://github.com/Maynudden/assignment_05
 
 ---
 
