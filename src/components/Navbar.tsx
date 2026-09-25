@@ -25,7 +25,6 @@ const Navbar = () => {
       "
     >
 
-
       <div
         className="
           max-w-7xl
@@ -35,9 +34,6 @@ const Navbar = () => {
         "
       >
 
-
-
-        {/* Desktop + Mobile Main Navbar */}
 
         <div
           className="
@@ -49,16 +45,11 @@ const Navbar = () => {
 
 
 
-          {/* Left Hamburger (Mobile) */}
+          {/* Mobile Menu */}
 
           <button
-
             onClick={() => setOpen(!open)}
-
-            className="
-              md:hidden
-            "
-
+            className="md:hidden"
           >
 
             {
@@ -69,7 +60,6 @@ const Navbar = () => {
               <Menu size={24}/>
             }
 
-
           </button>
 
 
@@ -78,40 +68,23 @@ const Navbar = () => {
 
           {/* Logo */}
 
-          <div
-            className="
-              flex
-              items-center
-            "
-          >
-
-            <img
-
-              src={logo}
-
-              alt="Dev Stack"
-
-              className="
-                h-8
-              "
-
-            />
-
-          </div>
+          <img
+            src={logo}
+            alt="Dev Stack"
+            className="h-8"
+          />
 
 
 
 
 
 
-
-          {/* Desktop Navigation */}
+          {/* Desktop Menu */}
 
           <div
             className="
               hidden
               md:flex
-              items-center
               gap-8
               text-sm
               text-gray-700
@@ -165,42 +138,29 @@ const Navbar = () => {
                 text-sm
               "
             >
-
               Sign In
-
             </button>
-
 
 
 
             <button
-
               className="
-                text-sm
+                brand-gradient
                 text-white
                 px-5
                 py-2
                 rounded-full
-                bg-gradient-to-r
-                from-orange-500
-                via-pink-500
-                to-violet-500
+                text-sm
               "
-
             >
-
               Sign Up
-
             </button>
-
 
 
           </div>
 
 
-
         </div>
-
 
 
 
@@ -221,38 +181,31 @@ const Navbar = () => {
               "
             >
 
-
               <a className="block">
                 Home
               </a>
-
 
               <a className="block">
                 Technologies
               </a>
 
-
               <a className="block">
                 Projects
               </a>
 
-
               <a className="block">
                 About
               </a>
-
 
               <a className="block">
                 Contact
               </a>
 
 
-
             </div>
 
           )
         }
-
 
 
 

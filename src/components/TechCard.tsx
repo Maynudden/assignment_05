@@ -3,17 +3,24 @@ import { FaStar } from "react-icons/fa";
 
 
 interface Props {
+
   tech: Technology;
+
   stack: Technology[];
+
   addToStack: (tech: Technology) => void;
+
 }
+
 
 
 const TechCard = ({
   tech,
   stack,
   addToStack
+
 }: Props) => {
+
 
 
   const isAdded = stack.some(
@@ -21,18 +28,21 @@ const TechCard = ({
   );
 
 
+
   return (
 
-    <div className="
-      border
-      border-gray-200
-      rounded-xl
-      p-5
-      bg-white
-      hover:shadow-xl
-      transition
-      duration-300
-    ">
+    <div
+      className="
+        border
+        border-gray-200
+        rounded-xl
+        p-5
+        bg-white
+        hover:shadow-xl
+        transition
+        duration-300
+      "
+    >
 
 
       <div className="flex justify-between items-start">
@@ -45,15 +55,20 @@ const TechCard = ({
         />
 
 
-        <span className="
-          text-xs
-          bg-purple-100
-          text-purple-600
-          px-3
-          py-1
-          rounded-full
-        ">
+
+        <span
+          className="
+            text-xs
+            bg-purple-100
+            text-purple-600
+            px-3
+            py-1
+            rounded-full
+          "
+        >
+
           {tech.badge}
+
         </span>
 
 
@@ -61,39 +76,63 @@ const TechCard = ({
 
 
 
+
+
       <h2 className="text-xl font-semibold mt-5">
+
         {tech.name}
+
       </h2>
 
 
 
+
+
       <p className="text-gray-500 text-sm mt-2">
+
         {tech.description}
+
       </p>
 
 
 
 
-      <div className="flex justify-between items-center mt-5">
 
 
-        <span className="
-          bg-gray-100
-          px-3
-          py-1
-          rounded-full
-          text-sm
-        ">
+      <div
+        className="
+          flex
+          justify-between
+          items-center
+          mt-5
+        "
+      >
+
+        <span
+          className="
+            bg-gray-100
+            px-3
+            py-1
+            rounded-full
+            text-sm
+          "
+        >
+
           {tech.category}
+
         </span>
 
 
         <span className="text-sm">
+
           {tech.difficulty}
+
         </span>
 
 
       </div>
+
+
 
 
 
@@ -106,7 +145,9 @@ const TechCard = ({
           {tech.rating}
         </span>
 
+
       </div>
+
 
 
 
@@ -119,25 +160,48 @@ const TechCard = ({
         onClick={() => addToStack(tech)}
 
         className={`
+
           mt-5
+
           w-full
+
           py-2
+
           rounded-lg
+
           text-white
+
           transition
+
+
           ${
             isAdded
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500 hover:scale-105"
+
+            ?
+
+            "bg-gray-400 cursor-not-allowed"
+
+            :
+
+            "brand-gradient hover:scale-105"
+
           }
+
+
         `}
 
       >
 
         {
           isAdded
-            ? "✓ Added to Stack"
-            : "Add to Stack"
+
+          ?
+
+          "✓ Added to Stack"
+
+          :
+
+          "Add to Stack"
         }
 
 
@@ -145,9 +209,11 @@ const TechCard = ({
 
 
 
+
     </div>
 
   );
+
 
 };
 

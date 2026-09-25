@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import type { Technology } from "./types";
 
 
+
 function App() {
 
 
@@ -22,7 +23,8 @@ function App() {
 
 
 
-  // Load technology data from JSON
+
+  // Load technology data
 
   useEffect(() => {
 
@@ -67,10 +69,10 @@ function App() {
 
 
 
+
   // Add technology
 
   const addToStack = (tech: Technology) => {
-
 
 
     const alreadyAdded = stack.find(
@@ -78,7 +80,6 @@ function App() {
       (item) => item.id === tech.id
 
     );
-
 
 
 
@@ -108,13 +109,11 @@ function App() {
 
 
 
-
     toast.success(
 
       `${tech.name} added to your stack`
 
     );
-
 
 
   };
@@ -126,7 +125,7 @@ function App() {
 
 
 
-  // Remove one technology
+  // Remove technology
 
   const removeFromStack = (id: string) => {
 
@@ -154,7 +153,6 @@ function App() {
 
 
 
-
     toast.info(
 
       `${removed?.name} removed`
@@ -172,10 +170,9 @@ function App() {
 
 
 
-  // Remove all technology
+  // Remove all
 
   const removeAll = () => {
-
 
 
     setStack([]);
@@ -189,10 +186,7 @@ function App() {
     );
 
 
-
   };
-
-
 
 
 
@@ -205,9 +199,7 @@ function App() {
     <>
 
 
-
       <Navbar />
-
 
 
       <Hero />
@@ -216,32 +208,41 @@ function App() {
 
 
 
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      <section className="
+        max-w-7xl
+        mx-auto
+        px-6
+        py-20
+      ">
 
 
 
 
-
-        <h2 className="text-4xl font-bold mb-3 text-gray-900">
+        <h2 className="
+          text-4xl
+          font-bold
+          mb-3
+          text-gray-900
+        ">
 
 
           Explore{" "}
 
 
+
           <span
+
             className="
-              bg-gradient-to-r
-              from-orange-500
-              via-pink-500
-              to-violet-500
-              bg-clip-text
-              text-transparent
+              brand-gradient-text
             "
+
           >
 
             Technologies
 
+
           </span>
+
 
 
         </h2>
@@ -251,9 +252,14 @@ function App() {
 
 
 
-        <p className="text-gray-500 mb-10">
+        <p className="
+          text-gray-500
+          mb-10
+        ">
+
 
           Pick one technology per category to build your ideal stack.
+
 
         </p>
 
@@ -265,15 +271,22 @@ function App() {
 
         {
 
+
           loading ?
+
 
 
           (
 
-            <div className="flex justify-center py-10">
+            <div className="
+              flex
+              justify-center
+              py-10
+            ">
 
 
               <div
+
                 className="
                   w-10
                   h-10
@@ -283,7 +296,9 @@ function App() {
                   rounded-full
                   animate-spin
                 "
+
               ></div>
+
 
 
             </div>
@@ -298,6 +313,7 @@ function App() {
 
 
           (
+
 
             <TechList
 
@@ -319,11 +335,11 @@ function App() {
 
             />
 
+
           )
 
 
         }
-
 
 
 
@@ -338,13 +354,12 @@ function App() {
 
 
 
-
-
     </>
 
   );
 
 }
+
 
 
 export default App;
