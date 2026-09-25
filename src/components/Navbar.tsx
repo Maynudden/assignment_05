@@ -1,63 +1,229 @@
-import { FiMenu } from "react-icons/fi";
+import { useState } from "react";
+
+import { Menu, X } from "lucide-react";
+
 import logo from "../assets/logo-text.png";
 
+
 const Navbar = () => {
+
+
+  const [open, setOpen] = useState(false);
+
+
+
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <nav className="
+      sticky
+      top-0
+      z-50
+      bg-white
+      border-b
+      border-gray-100
+    ">
+
+
+      <div className="
+        max-w-7xl
+        mx-auto
+        px-6
+        py-4
+        flex
+        items-center
+        justify-between
+      ">
+
+
+        {/* Mobile Hamburger */}
+
+        <button
+
+          className="
+          md:hidden
+          "
+
+          onClick={() => setOpen(!open)}
+
+        >
+
+          {
+            open
+            ?
+            <X size={24}/>
+            :
+            <Menu size={24}/>
+          }
+
+
+        </button>
+
+
+
+
 
         {/* Logo */}
-        <div className="flex items-center">
+
+        <div className="
+          flex
+          items-center
+          gap-2
+        ">
+
           <img
+
             src={logo}
+
             alt="Dev Stack"
-            className="w-32"
+
+            className="h-8"
+
           />
+
         </div>
+
+
+
+
 
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 text-sm text-gray-600">
-          <a className="text-pink-500">Home</a>
-          <a>Technologies</a>
-          <a>Projects</a>
-          <a>About</a>
-          <a>Contact</a>
+
+        <div className="
+          hidden
+          md:flex
+          gap-8
+          text-sm
+        ">
+
+
+          <a className="text-pink-500">
+            Home
+          </a>
+
+          <a>
+            Technologies
+          </a>
+
+          <a>
+            Projects
+          </a>
+
+          <a>
+            About
+          </a>
+
+          <a>
+            Contact
+          </a>
+
+
         </div>
+
+
+
+
 
 
         {/* Buttons */}
-        <div className="hidden md:flex items-center gap-4">
 
-          <button className="text-sm text-gray-600">
+        <div className="
+          flex
+          items-center
+          gap-4
+        ">
+
+
+          <button className="
+            hidden
+            sm:block
+            text-sm
+          ">
+
             Sign In
+
           </button>
 
-          <button className="px-5 py-2 rounded-full bg-pink-600 text-white text-sm">
+
+
+          <button className="
+            bg-gradient-to-r
+            from-orange-500
+            via-pink-500
+            to-violet-500
+            text-white
+            px-5
+            py-2
+            rounded-full
+            text-sm
+          ">
+
             Sign Up
+
           </button>
+
 
         </div>
 
 
-        {/* Mobile */}
-        <div className="flex md:hidden items-center gap-4">
-
-          <FiMenu size={24}/>
-
-          <button className="text-sm">
-            Sign In
-          </button>
-
-          <button className="px-3 py-1 rounded-full bg-pink-600 text-white text-sm">
-            Sign Up
-          </button>
-
-        </div>
 
       </div>
+
+
+
+
+
+      {/* Mobile Menu */}
+
+      {
+        open && (
+
+          <div className="
+            md:hidden
+            px-6
+            pb-5
+            space-y-4
+            text-sm
+          ">
+
+
+            <a className="block">
+              Home
+            </a>
+
+
+            <a className="block">
+              Technologies
+            </a>
+
+
+            <a className="block">
+              Projects
+            </a>
+
+
+            <a className="block">
+              About
+            </a>
+
+
+            <a className="block">
+              Contact
+            </a>
+
+
+          </div>
+
+        )
+      }
+
+
+
     </nav>
+
   );
+
 };
+
 
 export default Navbar;

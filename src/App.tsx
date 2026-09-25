@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 
 import { toast } from "react-toastify";
@@ -256,7 +257,7 @@ function App() {
 
       </section>
 
-
+    <Footer />
     </>
 
   );
