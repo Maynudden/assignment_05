@@ -14,209 +14,249 @@ const Navbar = () => {
 
   return (
 
-    <nav className="
-      sticky
-      top-0
-      z-50
-      bg-white
-      border-b
-      border-gray-100
-    ">
+    <nav
+      className="
+        sticky
+        top-0
+        z-50
+        bg-white
+        border-b
+        border-gray-100
+      "
+    >
 
 
-      <div className="
-        max-w-7xl
-        mx-auto
-        px-6
-        py-4
-        flex
-        items-center
-        justify-between
-      ">
+      <div
+        className="
+          max-w-7xl
+          mx-auto
+          px-6
+          py-4
+        "
+      >
 
 
-        {/* Mobile Hamburger */}
 
-        <button
+        {/* Desktop + Mobile Main Navbar */}
 
+        <div
           className="
-          md:hidden
+            flex
+            items-center
+            justify-between
           "
-
-          onClick={() => setOpen(!open)}
-
         >
 
-          {
-            open
-            ?
-            <X size={24}/>
-            :
-            <Menu size={24}/>
-          }
 
 
-        </button>
+          {/* Left Hamburger (Mobile) */}
 
+          <button
 
+            onClick={() => setOpen(!open)}
 
+            className="
+              md:hidden
+            "
 
+          >
 
-        {/* Logo */}
+            {
+              open
+              ?
+              <X size={24}/>
+              :
+              <Menu size={24}/>
+            }
 
-        <div className="
-          flex
-          items-center
-          gap-2
-        ">
-
-          <img
-
-            src={logo}
-
-            alt="Dev Stack"
-
-            className="h-8"
-
-          />
-
-        </div>
-
-
-
-
-
-
-        {/* Desktop Menu */}
-
-        <div className="
-          hidden
-          md:flex
-          gap-8
-          text-sm
-        ">
-
-
-          <a className="text-pink-500">
-            Home
-          </a>
-
-          <a>
-            Technologies
-          </a>
-
-          <a>
-            Projects
-          </a>
-
-          <a>
-            About
-          </a>
-
-          <a>
-            Contact
-          </a>
-
-
-        </div>
-
-
-
-
-
-
-        {/* Buttons */}
-
-        <div className="
-          flex
-          items-center
-          gap-4
-        ">
-
-
-          <button className="
-            hidden
-            sm:block
-            text-sm
-          ">
-
-            Sign In
 
           </button>
 
 
 
-          <button className="
-            bg-gradient-to-r
-            from-orange-500
-            via-pink-500
-            to-violet-500
-            text-white
-            px-5
-            py-2
-            rounded-full
-            text-sm
-          ">
-
-            Sign Up
-
-          </button>
 
 
-        </div>
+          {/* Logo */}
+
+          <div
+            className="
+              flex
+              items-center
+            "
+          >
+
+            <img
+
+              src={logo}
+
+              alt="Dev Stack"
+
+              className="
+                h-8
+              "
+
+            />
+
+          </div>
 
 
 
-      </div>
 
 
 
 
+          {/* Desktop Navigation */}
 
-      {/* Mobile Menu */}
+          <div
+            className="
+              hidden
+              md:flex
+              items-center
+              gap-8
+              text-sm
+              text-gray-700
+            "
+          >
 
-      {
-        open && (
-
-          <div className="
-            md:hidden
-            px-6
-            pb-5
-            space-y-4
-            text-sm
-          ">
-
-
-            <a className="block">
+            <a className="text-pink-500">
               Home
             </a>
 
-
-            <a className="block">
+            <a>
               Technologies
             </a>
 
-
-            <a className="block">
+            <a>
               Projects
             </a>
 
-
-            <a className="block">
+            <a>
               About
             </a>
 
-
-            <a className="block">
+            <a>
               Contact
             </a>
 
 
           </div>
 
-        )
-      }
 
+
+
+
+
+
+          {/* Buttons */}
+
+          <div
+            className="
+              flex
+              items-center
+              gap-3
+            "
+          >
+
+
+            <button
+              className="
+                hidden
+                sm:block
+                text-sm
+              "
+            >
+
+              Sign In
+
+            </button>
+
+
+
+
+            <button
+
+              className="
+                text-sm
+                text-white
+                px-5
+                py-2
+                rounded-full
+                bg-gradient-to-r
+                from-orange-500
+                via-pink-500
+                to-violet-500
+              "
+
+            >
+
+              Sign Up
+
+            </button>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        {/* Mobile Menu */}
+
+        {
+          open && (
+
+            <div
+              className="
+                md:hidden
+                mt-5
+                space-y-4
+                text-sm
+              "
+            >
+
+
+              <a className="block">
+                Home
+              </a>
+
+
+              <a className="block">
+                Technologies
+              </a>
+
+
+              <a className="block">
+                Projects
+              </a>
+
+
+              <a className="block">
+                About
+              </a>
+
+
+              <a className="block">
+                Contact
+              </a>
+
+
+
+            </div>
+
+          )
+        }
+
+
+
+
+      </div>
 
 
     </nav>
