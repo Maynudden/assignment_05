@@ -19,6 +19,7 @@ interface Props {
 }
 
 
+
 const TechList = ({
   technologies,
   stack,
@@ -34,22 +35,20 @@ const TechList = ({
     <div className="grid lg:grid-cols-4 gap-8">
 
 
-      {/* Technology Cards */}
-
       <div className="lg:col-span-3">
 
-        <div
-          className="
+
+        <div className="
           grid
           grid-cols-1
           md:grid-cols-2
           lg:grid-cols-3
           gap-6
-          "
-        >
+        ">
+
 
           {
-            technologies.map((tech) => (
+            technologies.map((tech)=>(
 
               <TechCard
 
@@ -66,13 +65,15 @@ const TechList = ({
             ))
           }
 
+
         </div>
+
 
       </div>
 
 
 
-      {/* Your Stack */}
+
 
       <Sidebar
 
@@ -83,6 +84,7 @@ const TechList = ({
         removeAll={removeAll}
 
       />
+
 
 
     </div>

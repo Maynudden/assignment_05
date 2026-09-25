@@ -1,4 +1,3 @@
-import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 
 import { toast } from "react-toastify";
@@ -6,6 +5,7 @@ import { toast } from "react-toastify";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TechList from "./components/TechList";
+import Footer from "./components/Footer";
 
 import type { Technology } from "./types";
 
@@ -21,9 +21,11 @@ function App() {
 
 
 
-  // Load JSON Data
+
+  // Load technology data from JSON
 
   useEffect(() => {
+
 
     fetch("/data.json")
 
@@ -37,11 +39,23 @@ function App() {
 
       })
 
+
       .catch((error) => {
 
-        console.error(error);
+
+        console.error(
+          "Failed to load technologies:",
+          error
+        );
+
 
         setLoading(false);
+
+
+        toast.error(
+          "Failed to load technologies"
+        );
+
 
       });
 
@@ -52,9 +66,11 @@ function App() {
 
 
 
-  // Add Technology
+
+  // Add technology
 
   const addToStack = (tech: Technology) => {
+
 
 
     const alreadyAdded = stack.find(
@@ -62,6 +78,7 @@ function App() {
       (item) => item.id === tech.id
 
     );
+
 
 
 
@@ -79,12 +96,25 @@ function App() {
 
 
 
-    setStack([...stack, tech]);
+
+
+    setStack([
+
+      ...stack,
+
+      tech
+
+    ]);
+
+
 
 
     toast.success(
-      `${tech.name} added to stack`
+
+      `${tech.name} added to your stack`
+
     );
+
 
 
   };
@@ -94,9 +124,12 @@ function App() {
 
 
 
-  // Remove Single Technology
+
+
+  // Remove one technology
 
   const removeFromStack = (id: string) => {
+
 
 
     const removed = stack.find(
@@ -104,6 +137,7 @@ function App() {
       (item) => item.id === id
 
     );
+
 
 
 
@@ -119,6 +153,8 @@ function App() {
 
 
 
+
+
     toast.info(
 
       `${removed?.name} removed`
@@ -126,6 +162,7 @@ function App() {
     );
 
 
+
   };
 
 
@@ -134,20 +171,28 @@ function App() {
 
 
 
-  // Remove All
+
+  // Remove all technology
 
   const removeAll = () => {
+
 
 
     setStack([]);
 
 
-    toast.info(
-      "Stack cleared"
+
+    toast.success(
+
+      "Stack cleared successfully"
+
     );
 
 
+
   };
+
+
 
 
 
@@ -160,14 +205,20 @@ function App() {
     <>
 
 
+
       <Navbar />
+
 
 
       <Hero />
 
 
 
+
+
       <section className="max-w-7xl mx-auto px-6 py-20">
+
+
 
 
 
@@ -179,12 +230,12 @@ function App() {
 
           <span
             className="
-            bg-gradient-to-r
-            from-orange-500
-            via-pink-500
-            to-violet-500
-            bg-clip-text
-            text-transparent
+              bg-gradient-to-r
+              from-orange-500
+              via-pink-500
+              to-violet-500
+              bg-clip-text
+              text-transparent
             "
           >
 
@@ -194,6 +245,7 @@ function App() {
 
 
         </h2>
+
 
 
 
@@ -210,43 +262,62 @@ function App() {
 
 
 
+
         {
 
-          loading ? (
+          loading ?
 
 
-            <div className="text-center py-10">
+          (
+
+            <div className="flex justify-center py-10">
 
 
-              <p className="text-gray-500">
-
-                Loading technologies...
-
-              </p>
+              <div
+                className="
+                  w-10
+                  h-10
+                  border-4
+                  border-gray-200
+                  border-t-pink-500
+                  rounded-full
+                  animate-spin
+                "
+              ></div>
 
 
             </div>
 
 
+          )
 
-          ) : (
 
 
+          :
+
+
+
+          (
 
             <TechList
 
+
               technologies={technologies}
+
 
               stack={stack}
 
+
               addToStack={addToStack}
+
 
               removeFromStack={removeFromStack}
 
+
               removeAll={removeAll}
 
-            />
 
+            />
 
           )
 
@@ -255,9 +326,20 @@ function App() {
 
 
 
+
+
       </section>
 
-    <Footer />
+
+
+
+
+      <Footer />
+
+
+
+
+
     </>
 
   );
